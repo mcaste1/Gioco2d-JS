@@ -68,6 +68,12 @@ class Player extends Hitbox {
         this.bullets.forEach((b) => b.draw(ctx));
 
         super.draw(ctx);
+
+        ctx.lineWidth = "2";
+        ctx.strokeStyle = "white";
+        ctx.fillStyle = "green";
+        ctx.fillRect(this.position.x + 50, ctx.canvas.clientHeight - this.position.y - 70, 100, 20);
+
         
     }
 
@@ -75,6 +81,8 @@ class Player extends Hitbox {
         this.position.add(this.velocity);
         this.moving = this.velocity.x != 0;
         this.update_timer.update();
+
+
 
         //  accelerazione gravitazionale se lascio la terra
         // if(this.position.y > conf.GROUND_Y) {

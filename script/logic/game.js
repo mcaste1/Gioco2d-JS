@@ -22,6 +22,7 @@ class Game {
 
         this.ground = new Hitbox(0,40, this.canvas.width, 150);
         this.player = new Player(this.config.PLAYER_SRC, this.playerNickname);
+        this.player2 = new Player(this.config.PLAYER_SRC, this.playerNickname);
         this.fireball = new Sprite(this.config.FIREBALL_SRC, 360, 360, 6, 1, 50, 50);
         this.obstacle = new Hitbox(550, 200, 100, 200);
         this.bgMusic = new Sound("assets/audio/background.mp3");
@@ -84,6 +85,7 @@ class Game {
         };
         this.player.update();
         this.fireball.update();
+        this.player2.update();
     }
 
     playBgMusic() {
@@ -96,11 +98,12 @@ class Game {
 
     draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        //this.ctx.clearRect(player.position);
         this.player.draw(this.ctx);
         this.fireball.draw(this.ctx);
         this.ground.draw(this.ctx);
         this.obstacle.draw(this.ctx);
-        
+        this.player2.draw(this.ctx);
     }
 
 }

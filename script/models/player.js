@@ -67,12 +67,16 @@ class Player extends Hitbox {
         ctx.fillText(this.name, this.position.x + 50, (ctx.canvas.clientHeight - (this.position.y + 5)));
         this.bullets.forEach((b) => b.draw(ctx));
 
-        super.draw(ctx);
+        //super.draw(ctx);
+
+        ctx.lineWidth = "4";
+        ctx.strokeStyle = "red";
+        ctx.strokeRect(this.position.x, ctx.canvas.clientHeight - this.position.y - 70, 100, 20);
 
         ctx.lineWidth = "2";
         ctx.strokeStyle = "white";
         ctx.fillStyle = "green";
-        ctx.fillRect(this.position.x + 50, ctx.canvas.clientHeight - this.position.y - 70, 100, 20);
+        ctx.fillRect(this.position.x + 10, ctx.canvas.clientHeight - this.position.y - 70, 100, 20);
 
         
     }

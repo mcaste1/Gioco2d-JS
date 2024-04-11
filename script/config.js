@@ -2,7 +2,7 @@
 
 let conf = {
     BACKGROUND_IMG_SRC: "../assets/img/background.png",
-    BG_WIDTH: 900,
+    BG_WIDTH: 1920,
     BG_HEIGHT: 480,
 
     GAME_FPS: 60,
